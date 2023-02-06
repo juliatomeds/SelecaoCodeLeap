@@ -37,9 +37,7 @@ mvn -version
 ![img_2.png](img_2.png)
 - Se precisar baixe o [Java](https://www.oracle.com/java/technologies/downloads/#jdk17-windows)
 - Se o mvn não tiver sido reconhecido siga essas [instruções](https://www.youtube.com/watch?v=-ucX5w8Zm8s)
-
 - Precisa adicionar as [dependências do Cucumber JAVA](https://mvnrepository.com/artifact/io.cucumber/cucumber-java)
-- Precisa adicionar as [dependências do Cucumber TestNG](https://mvnrepository.com/artifact/io.cucumber/cucumber-testng)
 - Depois vai no arquivo "pom.xlm" e clica com o botão direito em Maven -> Reload Project
 - Depois vai em File -> Settings -> Plugins -> Baixa "Gherkin" e "Cucumber +" e "Create TestNG XML"
 
