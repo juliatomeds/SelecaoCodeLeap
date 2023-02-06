@@ -1,0 +1,100 @@
+                                        RESULTADO DOS CENÁRIOS DE TESTES
+@CT1 Fluxo Automatizado - ✅ Aprovado
+@CT2 Fluxo Automatizado - ✅ Aprovado
+@CT3 Fluxo Automatizado - ✅ Aprovado
+@CT4 Fluxo Manual - ✅ Aprovado. O fluxo não foi automatizado pois está diferente do Figma
+@CT5 Fluxo Manual - ✅ Aprovado
+@CT6 Fluxo Manual - ✅ Aprovado
+@CT7 Fluxo Manual - ✅ Aprovado
+@CT8 Fluxo Manual - ✅ Aprovado
+@CT9 Fluxo Manual - ✅ Aprovado
+@CT10 Fluxo Manual - ❌ Reprovado, modal Delete Alert diferente do desenvolvido no Figma
+@CT11 Fluxo Manual - ✅ Aprovado
+
+                                          RESUMO DOS CENÁRIOS DE TESTES
+@CT1 Fluxo Automatizado - Scenario: Realizar o login verificando o funcionamento do botão "Enter"
+@CT2 Fluxo Automatizado - Scenario: Permissão para criar Posts
+@CT3 Fluxo Automatizado - Scenario: Permissão para editar Posts
+@CT4 Fluxo Manual - Scenario: Permissão para deletar Posts
+@CT5 Fluxo Manual - Scenario: Permissão para deletar Posts - Fluxo interrompido
+@CT6 Fluxo Manual - Scenario: Permissão para ler Posts
+@CT7 Fluxo Manual - Scenario: Permissão para editar e excluir Posts
+@CT8 Fluxo Manual - Scenario: Verificar se a tela SignUp está igual ao Figma
+@CT9 Fluxo Manual - Scenario: Verificar se a tela MainScreen está igual ao Figma
+@CT10 Fluxo Manual - Scenario: Verificar se a tela Delete Alert está igual ao Figma
+@CT11 Fluxo Manual - Scenario: Verificar se a tela Edit Item Modal está igual ao Figma
+
+                                       DESCRIÇÃO DE CADA CENÁRIO DE TESTE
+@CT1 Fluxo Automatizado
+  Scenario: Realizar o login verificando o funcionamento do botão "Enter"
+      Given eu acesso o site
+      Then o botao de login deve estar indisponivel
+      When eu escrevo meu usuario
+      Then o botao de login deve ficar disponivel
+      When eu clico no botao Enter
+      Then devo logar
+
+@CT2 Fluxo Automatizado
+  Scenario: Permissão para criar Posts
+  Given que eu fiz o login e estou na tela de Posts
+  Then o botao de criar deve estar indisponivel
+  When eu escrevo o titulo do Post
+  Then o botao de criar deve estar indisponivel
+  When eu escrevo o subtitulo do Post
+  Then o botao de criar deve ficar disponivel
+  When eu clico no botao criar
+  Then a lista deve ser atualizada
+
+@CT3 Fluxo Automatizado
+  Scenario: Permissão para editar Posts
+  Given que eu fiz o login e estou na tela de Posts
+  And clico em editar o Post
+  And edito o Titulo
+  And edito o Content
+  And clico em Save
+  Then a lista deve ser atualizada
+
+@CT4 Fluxo Manual
+  Scenario: Permissão para deletar Posts
+  Given que eu fiz o login e estou na tela de Posts
+  And clico em deletar o Post
+  And clico em OK
+  Then a lista deve ser atualizada e esse post não deverá aparecer mais
+
+@CT5 Fluxo Manual
+  Scenario: Permissão para deletar Posts - Fluxo interrompido
+  Given que eu fiz o login e estou na tela de Posts
+  And clico em deletar o Post
+  And clico em Cancelar
+  Then a lista não deve ser atualizada e esse post deverá continuar aparecendo
+
+@CT6 Fluxo Manual
+  Scenario: Permissão para ler Posts
+  Given que eu fiz o login e estou na tela de Posts com o usuário {Usuário de Teste QA}
+  Then a lista possui informações que foram inputadas {Usuário de Teste QA}, e pode ter outras que foram adicionadas por outros usuários
+
+@CT7 Fluxo Manual
+  Scenario: Permissão para editar e excluir Posts
+  Given que eu fiz o login e estou na tela de Posts com o usuário {Usuário de Teste QA}
+  Then eu não consigo editar e excluir as informações de outros usuários
+  Then eu consigo editar e excluir informações escritas por {Usuário de Teste QA}
+
+@CT8 Fluxo Manual
+  Scenario: Verificar se a tela SignUp está igual ao Figma
+  Given eu entro no site
+  Then verifico que a tela a tela SignUp está igual ao Figma
+
+@CT9 Fluxo Manual
+  Scenario: Verificar se a tela MainScreen está igual ao Figma
+  Given eu entro no site
+  Then verifico que a tela a tela MainScreen está igual ao Figma
+
+@CT10 Fluxo Manual
+  Scenario: Verificar se a tela Delete Alert está igual ao Figma
+  Given eu entro no site
+  Then verifico que a tela a tela Delete Alert está igual ao Figma
+
+@CT11 Fluxo Manual
+  Scenario: Verificar se a tela Edit Item Modal está igual ao Figma
+  Given eu entro no site
+  Then verifico que a tela a tela Edit Item Modal está igual ao Figma
